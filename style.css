@@ -1,0 +1,352 @@
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(180deg,#0d0d0d,#171717);
+
+    color:white;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* ===========================
+   Background Glow
+=========================== */
+
+.background-glow{
+
+    position:fixed;
+
+    top:-250px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:1800px;
+
+    height:1200px;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+
+        rgba(138,43,226,.35) 0%,
+
+        rgba(18,168,199,.22) 35%,
+
+        rgba(18,168,199,.10) 55%,
+
+        rgba(0,0,0,0) 75%
+    );
+
+    filter:blur(120px);
+
+    z-index:0;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:420px;
+
+    max-width:90%;
+
+    margin:55px auto;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo{
+
+    width:145px;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    box-shadow:
+
+    0 0 35px rgba(18,168,199,.25),
+
+    0 0 80px rgba(138,43,226,.18);
+
+    transition:.35s;
+
+}
+
+.logo:hover{
+
+    transform:scale(1.04);
+
+    box-shadow:
+
+    0 0 55px rgba(18,168,199,.40),
+
+    0 0 120px rgba(138,43,226,.30);
+
+}
+
+/* ===========================
+   Title
+=========================== */
+
+h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+
+}
+
+.subtitle{
+
+    color:#cfcfcf;
+
+    font-size:18px;
+
+    margin-bottom:55px;
+
+}
+/* ===========================
+   Buttons
+=========================== */
+
+.button{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    width:100%;
+
+    height:64px;
+
+    margin:18px 0;
+
+    padding:0 24px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:19px;
+
+    font-weight:500;
+
+    border-radius:16px;
+
+    background:rgba(10,10,10,.65);
+
+    border:1px solid rgba(18,168,199,.6);
+
+    backdrop-filter:blur(12px);
+
+    transition:.30s;
+
+}
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex:1;
+
+}
+
+.left i{
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:22px;
+
+}
+
+.arrow{
+
+    margin-left:40px;
+
+    opacity:.8;
+
+    transition:.3s;
+
+}
+/* ===========================
+   Hover
+=========================== */
+
+.button:hover{
+
+    background:rgba(18,168,199,.18);
+
+    border-color:#12A8C7;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 0 20px rgba(18,168,199,.30);
+
+}
+
+.button:hover .arrow{
+
+    transform:translateX(6px);
+
+}
+/* ===========================
+   Active Click
+=========================== */
+
+.button:active{
+
+    transform:scale(.98);
+}
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#12A8C7;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+.container{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.button{
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+}
+
+.button:nth-child(4){
+
+    animation-delay:.15s;
+
+}
+
+.button:nth-child(5){
+
+    animation-delay:.30s;
+
+}
+
+.button:nth-child(6){
+
+    animation-delay:.45s;
+
+}
+
+.button:nth-child(7){
+
+    animation-delay:.60s;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   particles
+=========================== */
+
+#particles-js{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-2;
+
+}
+
