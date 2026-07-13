@@ -513,3 +513,27 @@ h1{
     }
 
 }
+
+.footer{
+
+    margin-top:35px;
+
+    margin-bottom:20px;
+
+    color:rgba(255,255,255,.35);
+
+    font-size:12px;
+
+    font-weight:400;
+
+    letter-spacing:.5px;
+
+    text-align:center;
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+    animation-delay:1.25s;
+
+}
