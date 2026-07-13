@@ -107,6 +107,11 @@ body{
 
     transition:.35s;
 
+    animation:logoFloat 5s ease-in-out infinite;
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
 }
 
 .logo:hover{
@@ -127,23 +132,36 @@ body{
 
 h1{
 
-    font-size:42px;
+    font-size:48px;
 
     font-weight:700;
 
     letter-spacing:2px;
 
-    margin-bottom:22px;
+    margin-bottom:18px;
 
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+    animation-delay:.15s;
 }
 
 .subtitle{
 
-    color:#cfcfcf;
+    color:#d7d7d7;
 
-    font-size:18px;
+    font-size:17px;
+
+    line-height:1.7;
 
     margin-bottom:55px;
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+    animation-delay:.30s;
 
 }
 /* ===========================
@@ -174,7 +192,7 @@ h1{
 
     font-weight:500;
 
-    border-radius:16px;
+    border-radius:20px;
 
     background:rgba(10,10,10,.65);
 
@@ -183,6 +201,40 @@ h1{
     backdrop-filter:blur(12px);
 
     transition:.30s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transition:.8s;
 
 }
 
@@ -206,6 +258,8 @@ h1{
 
     font-size:22px;
 
+    transition:.35s;
+
 }
 
 .arrow{
@@ -227,17 +281,35 @@ h1{
 
     border-color:#12A8C7;
 
-    transform:translateY(-4px);
+    transform:translateY(-6px) scale(1.02);
 
     box-shadow:
 
-    0 0 20px rgba(18,168,199,.30);
+        0 10px 35px rgba(18,168,199,.20),
+
+        0 0 25px rgba(18,168,199,.30);
 
 }
 
 .button:hover .arrow{
 
-    transform:translateX(6px);
+    transform:
+
+        translateX(6px)
+
+        translateY(-3px);
+
+}
+
+.button:hover .left i{
+
+    transform:rotate(-10deg) scale(1.12);
+
+}
+
+.button:hover::before{
+
+    left:140%;
 
 }
 /* ===========================
@@ -272,12 +344,6 @@ h1{
 
 }
 
-.container{
-
-    animation:fadeUp .8s ease;
-
-}
-
 .button{
 
     opacity:0;
@@ -286,27 +352,57 @@ h1{
 
 }
 
-.button:nth-child(4){
+.button:nth-of-type(1){
 
     animation-delay:.15s;
 
 }
 
-.button:nth-child(5){
+.button:nth-of-type(2){
 
     animation-delay:.30s;
 
 }
 
-.button:nth-child(6){
+.button:nth-of-type(3){
 
     animation-delay:.45s;
 
 }
 
-.button:nth-child(7){
+.button:nth-of-type(4){
 
     animation-delay:.60s;
+
+}
+
+.button:nth-of-type(5){
+
+    animation-delay:.75s;
+
+}
+
+.button:nth-of-type(6){
+
+    animation-delay:.90s;
+
+}
+
+.button:nth-of-type(7){
+
+    animation-delay:1.05s;
+
+}
+
+.button:nth-of-type(8){
+
+    animation-delay:1.20s;
+
+}
+
+.button:nth-of-type(9){
+
+    animation-delay:1.35s;
 
 }
 
@@ -350,3 +446,66 @@ h1{
 
 }
 
+.section{
+
+    margin:38px 0 18px;
+
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#12A8C7;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+    opacity:0;
+
+    animation:fadeUp .6s ease forwards;
+
+    animation-delay:.45s;
+
+}
+
+.section-title::before,
+
+.section-title::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(18,168,199,.25);
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
